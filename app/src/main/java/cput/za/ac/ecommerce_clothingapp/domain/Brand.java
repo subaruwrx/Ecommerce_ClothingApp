@@ -93,6 +93,7 @@ public class Brand implements Serializable {
         }
         return true;
     }
+
     @Override
     public String toString() {
         return "Brand id{" + ":" + id+ '}';

@@ -21,13 +21,14 @@ public class Sale_Factory {
         return instance;
     }
 
-    public Sale createSales(char saleDocumentNum , Map<String,String> values, int num) {
+    public static Sale createSales( Map<String,String> values, Map<String,Integer> num) {
         Sale sale= new Sale
-                .Builder(saleDocumentNum)
+                .Builder()
+                .documentNumber(values.get("saleDocumentNum"))
                 .creditType(values.get("creditType"))
                 .orderStatus(values.get("orderStatus"))
-                .invoiceNumber(num)
-                .quantity(num)
+                .invoiceNumber(num.get("invoiceNumber"))
+                .quantity(num.get("quauntity"))
                 .build();
         return sale;
 

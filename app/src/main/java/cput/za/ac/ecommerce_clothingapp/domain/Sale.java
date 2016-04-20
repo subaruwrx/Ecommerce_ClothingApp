@@ -7,7 +7,7 @@ import java.io.Serializable;
  */
 public class Sale implements Serializable {
 
-    private char saleDocumentNum;
+    private String saleDocumentNum;
     private int invoiceNumber;
     private int numOfItems;
     private String orderstatus;
@@ -32,7 +32,7 @@ public class Sale implements Serializable {
 
     public static class Builder{
 
-        private char saleDocumentNum;
+        private String saleDocumentNum;
         private int invoiceNumber;
         private int numOfItems;
         private String orderstatus;
@@ -40,10 +40,15 @@ public class Sale implements Serializable {
         private int quantity;
 
 
-        public Builder(char saleDocumentNum){
-            this.saleDocumentNum=saleDocumentNum;
+        public Builder(){
+
         }
 
+        public Builder documentNumber(String saleDocumentNum)
+        {
+            this.saleDocumentNum=saleDocumentNum;
+            return this;
+        }
 
         public Builder invoiceNumber(int invoiceNumber){
             this.invoiceNumber=invoiceNumber;
@@ -90,7 +95,7 @@ public class Sale implements Serializable {
 
     }
 
-    public char getSaleDocumentNum() {
+    public String getSaleDocumentNum() {
         return saleDocumentNum;
     }
 
